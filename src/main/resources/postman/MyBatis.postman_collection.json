@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "2ae7f032-7631-4cd1-8295-ca4b505ff9d4",
+		"name": "MyBatis",
+		"description": "A collection of requests that allows the user to do CRUD (create-read-update-delete) operations on his tasks.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "777176"
+	},
+	"item": [
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Drink some more water.\",\r\n    \"priority\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks"
+							]
+						},
+						"description": "Create a new task.\n\n**Definitions of the Request Body**\n\n| Property | Description |\n| --- | --- |\n| Description | Description of the task |\n| Priority | Priority of the task |"
+					},
+					"response": [
+						{
+							"name": "Succes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Drink some more water.\",\r\n    \"priority\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/tasks",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 04:50:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks"
+							]
+						},
+						"description": "Return all the tasks.\n\n**Definitions of the Response Body**\n\n| Property | Description |\n| --- | --- |\n| Description | Description of the task |\n| Priority | Priority of the task |"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tasks",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 04:26:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"description\": \"Drink water.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 2,\n        \"description\": \"Fix bed first thing in the morning.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 3,\n        \"description\": \"Feed pets in the morning.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 4,\n        \"description\": \"Have breakfast.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 5,\n        \"description\": \"Clean dishes after having my breakfast.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 6,\n        \"description\": \"Drink water.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 7,\n        \"description\": \"Work in the morning.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 8,\n        \"description\": \"Feed pets in the afternoon.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 9,\n        \"description\": \"Have lunch.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 10,\n        \"description\": \"Clean dishes after having my lunch.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 11,\n        \"description\": \"Drink water.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 12,\n        \"description\": \"Clean dishes after lunch.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 13,\n        \"description\": \"Work in the afternoon.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 14,\n        \"description\": \"Feed pets in the evening.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 15,\n        \"description\": \"Have dinner.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 16,\n        \"description\": \"Clean dishes after having my dinner.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 17,\n        \"description\": \"Drink water.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 18,\n        \"description\": \"Study for master's degree.\",\n        \"priority\": 9\n    },\n    {\n        \"id\": 19,\n        \"description\": \"Workout.\",\n        \"priority\": 4\n    },\n    {\n        \"id\": 20,\n        \"description\": \"Take protein.\",\n        \"priority\": 5\n    },\n    {\n        \"id\": 21,\n        \"description\": \"Talk to my family and friends.\",\n        \"priority\": 7\n    },\n    {\n        \"id\": 22,\n        \"description\": \"Clean my cloth.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 23,\n        \"description\": \"Take a shower.\",\n        \"priority\": 10\n    },\n    {\n        \"id\": 24,\n        \"description\": \"Sleep early\",\n        \"priority\": 2\n    },\n    {\n        \"id\": 25,\n        \"description\": \"Make this fabricated task list in GitHub for the social engineer hacker.PD: please put water for my plants too.\",\n        \"priority\": 2\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tasks/{{taskId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks",
+								"{{taskId}}"
+							]
+						},
+						"description": "Return one task.\n\n**URL Parameters**\n\n| Property | Description |\n| --- | --- |\n| taskId | Task identifier |\n\n**Definitions of the Response Body**\n\n| Property | Description |\n| --- | --- |\n| Description | Description of the task |\n| Priority | Priority of the task |"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tasks/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 04:41:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"description\": \"Drink some more water.\",\n    \"priority\": 10\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Drink some more water.\",\r\n    \"priority\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tasks/{{taskId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks",
+								"{{taskId}}"
+							]
+						},
+						"description": "Delete a task.\n\n**URL Parameters**\n\n| Property | Description |\n| --- | --- |\n| taskId | Task identifier |\n\n**Definitions of the Request Body**\n\n| Property | Description |\n| --- | --- |\n| Description | Description of the task |\n| Priority | Priority of the task |"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Drink some more water.\",\r\n    \"priority\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/tasks/{{taskId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tasks",
+										"{{taskId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 04:37:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tasks/{{taskId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks",
+								"{{taskId}}"
+							]
+						},
+						"description": "Delete a task.\n\n**URL Parameters**\n\n| Property | Description |\n| --- | --- |\n| taskId | Task identifier |"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tasks/{{taskId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tasks",
+										"{{taskId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 05:18:55 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "A folder that containts all the operations that the user's can do with his/her tasks."
+		}
+	]
+}

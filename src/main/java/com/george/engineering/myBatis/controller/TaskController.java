@@ -3,9 +3,7 @@ package com.george.engineering.myBatis.controller;
 import com.george.engineering.myBatis.mapper.TaskMapper;
 import com.george.engineering.myBatis.model.Task;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,13 +17,34 @@ public class TaskController {
         this.taskMapper = taskMapper;
     }
 
-    @GetMapping("/all")
-    public List<Task> getTasks() {
+    @GetMapping("")
+    public List<Task> getAll() {
         return taskMapper.selectAll();
     }
 
+    @GetMapping("/{id}")
+    public Task getById(@PathVariable String id) {
+        return taskMapper.selectById(Integer.parseInt(id));
+    }
+
+    @PostMapping("")
+    public void add(@RequestBody Task task) {
+        taskMapper.insert(task);
+    }
+
+    @PutMapping("/{id}")
+    private void update(@PathVariable String id, @RequestBody Task task) {
+        taskMapper.update(Integer.parseInt(id), task.getDescription(), task.getPriority());
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable String id) {
+        taskMapper.delete(Integer.parseInt(id));
+    }
+
+
     @GetMapping("/update")
-    private List<Task> updateTask() {
+    private List<Task> update() {
         taskMapper.insert(new Task("Drink water.", 10));
         taskMapper.insert(new Task("Fix bed first thing in the morning.", 10));
         taskMapper.insert(new Task("Feed pets in the morning.", 10));

@@ -1,3 +1,4 @@
+-- Create the table structure for the task table.
 CREATE TABLE task
 (
     id int(11) NOT NULL AUTO_INCREMENT,
